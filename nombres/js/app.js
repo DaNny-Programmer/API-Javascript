@@ -11,7 +11,7 @@ function cargarNombres(e) {
 
     const cantidad = document.getElementById('numero').value;
 
-    console.log(cantidad);
+
 
     let url = '';
     url += 'https://uinames.com/api/?';
@@ -31,6 +31,29 @@ function cargarNombres(e) {
 
     }
 
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function() {
+        if(this.status === 200) {
+            const nombres = JSON.parse( this.responseText );
 
-    console.log(url);
+            let htmlNombres = '<h2>Nombres Generados</h2>';
+
+            htmlNombres += '<url class="lista">';
+            nombres.forEach(function(nombre) {
+                htmlNombres += `
+                    <li>${nombre.name}<li>
+
+                
+                `;
+
+                
+            });
+
+
+
+            htmlNombres += '</ul>'
+            document.getElementById('resultado').innerHTML = htmlNombres;
+        }
+    }
 }
