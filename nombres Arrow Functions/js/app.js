@@ -12,20 +12,17 @@ function cargarNombres(e) {
      const origenSeleccionado = origen.options[origen.selectedIndex].value;
      const cantidad = document.getElementById('numero').value;
 
-
      let url = '';
      url += `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${ origenSeleccionado }&limit=${ cantidad }&api_key=${ apiKey }&format=json`;
-     
+
 
      //Crear Fetch
      fetch(url)
-          .then(function(res){
-               return res.json();
-          })
-          .then(function(artistas){
+          .then(res => res.json())
+          .then(artistas => {
                let htmlNombres = `<h2>Top de Artistas</h2>`;
                htmlNombres += `<ul class="lista">`;
-               artistas.topartists.artist.forEach(function(artista) {
+               artistas.topartists.artist.forEach(artista => {
                     htmlNombres += `
                          <li><a href='${ artista.url }' target="_blank">${artista.name}</a></li>
                     `;
@@ -33,7 +30,5 @@ function cargarNombres(e) {
                htmlNombres += `</ul>`;
                document.querySelector('#resultado').innerHTML = htmlNombres;
           })
-          .catch(function(error){
-               console.log(error);
-          })
+          .catch(error => console.log(error))
 }
