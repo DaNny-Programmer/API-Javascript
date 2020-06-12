@@ -12,14 +12,19 @@ aprendiendo = () => {
 
 //Una linea no requiere llaves
 aprendiendo = () => console.log('Aprendiendo JavaScript');
+
 //Retorna valor
 aprendiendo = () => 'Aprendiendo JavaScript';
+
 //Retorna Objeto
 aprendiendo = () => ({aprendiendo: 'Aprendiendo JavaScript'});
+
 //Pasar parametros
-aprendiendo = (tecnologia) => console.log(`Aprendiendo ${tecnologia}`);
+aprendiendo = (tecnología) => console.log(`Aprendiendo ${tecnología}`);
+
 //Pasando 1 parametro
-aprendiendo = tecnologia => console.log(`Aprendiendo ${tecnologia}`);
+aprendiendo = tecnología => console.log(`Aprendiendo ${tecnología}`);
+
 //Pasando 2 parametros
 aprendiendo = (tec1, tec2) => console.log(`Aprendiendo ${tec1} y ${tec2}`);
 
