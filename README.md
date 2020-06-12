@@ -1,2 +1,2 @@
 # API-Javascript
-Primer proyectos con Javascript
+Primeros proyectos con Javascript
