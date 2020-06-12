@@ -16,39 +16,6 @@ function cargarNombres(e) {
      let url = '';
      url += `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${ origenSeleccionado }&limit=${ cantidad }&api_key=${ apiKey }&format=json`;
      
-     
-     // Conectar con ajax
-     // Iniciar XMLHTTPRequest
-     /*const xhr = new XMLHttpRequest();
-     // Abrimos la conexion
-     xhr.open('GET', url, true);
-     // Datos e impresion del template
-     xhr.onload = function() {
-          if(this.status === 200) {
-               const respuesta = JSON.parse( this.responseText ) ;
-               const artistas = respuesta.topartists.artist;
-               console.log(artistas);
-               // Generar el HTML
-               let htmlNombres = '<h2>Top de Artistas</h2>';
-               
-               htmlNombres += '<ul class="lista">';
-
-               // Imprimir cada nombre
-               artistas.forEach(function(artista) {
-                    htmlNombres += `
-                              <li><a href='${ artista.url }' target="_blank">${artista.name} </a></li>
-                    `;
-               })
-
-               htmlNombres += '</ul>';
-
-               document.getElementById('resultado').innerHTML = htmlNombres;
-          }
-     }
-     // Enviar el Request
-     xhr.send();*/
-
-
 
      //Crear Fetch
      fetch(url)
