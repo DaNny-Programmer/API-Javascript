@@ -3,7 +3,7 @@ const cargarPosts = document.querySelector('#cargar').addEventListener('click', 
 function cargarAPI(){
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', 'http://jsonplaceholder.typicode.com/posts', true);
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
 
     xhr.onload = function(){
         if(this.status === 200) {
